@@ -1,7 +1,7 @@
 # Perona-Malik diffusion
 
 ## Disclaimer
-This repository contains the code I used in my final project for a Partial Differential Equations course during my exchange semester at [Syddansk Universitet](https://www.sdu.dk) 2021. I have not updated the code since, so I am not aware if newer versions of the libraries involved broke the scripts.
+This repository contains the code I used in my final project for a Partial Differential Equations course during my exchange semester at [Syddansk Universitet](https://www.sdu.dk) in 2021. I have not updated the code since, so I am not aware if newer versions of the libraries involved broke the scripts.
 
 The scripts included were written just in order to showcase the method: if you need to denoise an image, there are for sure better methods (or better implementations of this very method!). 
 
