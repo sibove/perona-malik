@@ -1,11 +1,13 @@
 # Perona-Malik diffusion
 
 ## Disclaimer
-This repository contains the code I used in my final project for a Partial Differential Equations course during my exchange semester at [Syddansk Universitet](https://www.sdu.dk) 2021. I have not updated the code since, so I am not aware if newer versions of the libraries involved broke the scripts. 
+This repository contains the code I used in my final project for a Partial Differential Equations course during my exchange semester at [Syddansk Universitet](https://www.sdu.dk) 2021. I have not updated the code since, so I am not aware if newer versions of the libraries involved broke the scripts.
 
-[Perona-Malik diffusion](https://en.wikipedia.org/wiki/Anisotropic_diffusion) is a technique developed to reduce image noise that focuses on preserving the edges of the various shapes present in the image. 
+The scripts included were written just in order to showcase the method: if you need to denoise an image, there are for sure better methods (or better implementations of this very method!). 
 
 ## The idea
+[Perona-Malik diffusion](https://en.wikipedia.org/wiki/Anisotropic_diffusion) is a technique developed to reduce image noise that focuses on preserving the edges of the various shapes present in the image.
+
 An intuitive idea when attempting to reduce noise in an image is to use some kind of _local mean_ of the RGB values at each pixel of the image. One could arbitrarily choose to compute said mean over a $3\times 3$ or $5\times 5$ square centered at the pixel, and would quickly notice how the arithmetic mean is not a good way to go, since every pixel in the square over which the average is calculated is given the same weight in determining the color of the central pixel. 
 It is then natural to resort to a weighted average instead, in which pixels closer to the center of the "averaging square" have a bigger weight and pixels closer to the border have a low weight in the average. A possible choice for assigning the weights this way is to use a (bivariate) Gaussian distribution centered on the pixel for which we are calculating the denoised color. This choice allows us to compute the average over the entire domain as well, instead of restricting it to a square like before. 
 
