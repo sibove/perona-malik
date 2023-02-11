@@ -1,6 +1,6 @@
 """
 Script for Perona-Malik anisotropic diffusion.
-The image to be denoised shall be renamed to noisy.jpg and given as command line argument to the script.
+The image to be denoised shall be renamed to noisy.jpg.
 """
 
 from fenics import *
@@ -10,7 +10,7 @@ import matplotlib.pyplot as plt
 # Clock starts
 start = time.time()
 
-# Import the image specified in the first command line argument and convert it to grayscale if necessary
+# Import noisy image and convert it to grayscale if necessary
 image = PIL.Image.open('noisy.jpg').convert('L')
 
 # Convert the image to an array for manipulation
