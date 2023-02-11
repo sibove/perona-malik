@@ -23,11 +23,11 @@ $$(\Phi * I)(x)=\int_\Omega \Phi(x-y)I(y)dy.$$
 
 It turns out, convolving with a Gaussian density is the same thing as solving the heat equation
 $$I_t = \nabla\cdot(D\nabla I)$$
-in time, with a constant diffusion coefficient $D$ which is related to the variance of the Gaussian we convolute the starting image with. Selecting a constant coefficient, however, does not lead to good results.
+in time, with a constant diffusion coefficient $D$ which is related to the variance of the Gaussian we convolute the starting image with. Selecting a constant coefficient, however, does not lead to good results, as you can see: 
 
 ![gaussian](https://user-images.githubusercontent.com/125075914/218161909-ac9bbd49-b68b-462f-80a9-c4ae6632fbcb.jpeg)
 
-The problem is that the smoothing process has to be adaptive: we want smaller diffusion coefficients closer to the edges of the various shapes in the image, so that the edge itself or anything on the other side has a very small weight. 
+The edges of the tree and the hills are blurred, and the problem is that the smoothing process has to be adaptive: we want smaller diffusion coefficients closer to the edges of the various shapes in the image, so that the edge itself or anything on the other side has a very small weight. 
 The solution proposed by Perona and Malik was to estimate the diffusion parameter $D = D(x,y,t)$ using the gradient $\nabla I(x,y,t)$, or rather a function of its norm. Two proposed function families were
 $$g(\|\nabla I\|) = e^{-(\|\nabla I\|/K)^2}$$
 and 
