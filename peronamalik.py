@@ -1,6 +1,6 @@
 """
-Script for Perona-Malik anisotropic diffusion, intended to be run on uCloud.
-The image to be denoised shall be renamed to noisy.jpg.
+Script for Perona-Malik anisotropic diffusion.
+The image to be denoised shall be renamed to noisy.jpg and given as command line argument to the script.
 """
 
 from fenics import *
